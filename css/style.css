@@ -21,6 +21,14 @@ body {
   background: var(--bg);
 }
 
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
