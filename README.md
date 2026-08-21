@@ -3,7 +3,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=mdraiyanalam&label=Profile%20views&color=0e75b6&style=flat" alt="mdraiyanalam" /> </p>
 
-- 🌱 Currently working on **Reactjs, Nextjs, ASP.NET, PostreSQL and SSMS**
+- 🌱 Currently working with **Reactjs, Nextjs, ASP.NET, PostreSQL and SSMS**
 
 - 👨‍💻 Linkedin: **https://www.linkedin.com/in/mdraiyanalam**
 
