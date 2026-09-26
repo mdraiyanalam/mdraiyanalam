@@ -32,8 +32,5 @@
     SSMS
   </a>
 </p>
-<br clear="both">
-
-<br clear="both">
 
 ![snake gif](https://github.com/mdraiyanalam/mdraiyanalam/blob/output/github-snake.svg)
