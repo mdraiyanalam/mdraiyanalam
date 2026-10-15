@@ -7,13 +7,11 @@
   <meta name="description" content="Md Raiyan Alam is a full-stack developer from Dhaka specializing in React, Next.js, ASP.NET, and Django. View selected projects and get in touch.">
   <meta name="author" content="Md Raiyan Alam">
   <link rel="canonical" href="https://mdraiyanalam.github.io/mdraiyanalam/">
-
   <meta property="og:title" content="Md Raiyan Alam — Full-Stack Developer">
   <meta property="og:description" content="Selected work in React, ASP.NET, Django, and applied machine learning.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mdraiyanalam.github.io/mdraiyanalam/">
   <meta property="og:image" content="img/Md Raiyan Alam.jpg">
-
   <link rel="icon" href="img/ball-juggling-icon-vector.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +19,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-
   <style>
     :root {
       --brand: #9f51f0;
@@ -32,20 +29,16 @@
       --bg: #f7f5fb;
       --card: #ffffff;
     }
-
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 5.25rem;
     }
-
     * { box-sizing: border-box; }
-
     body {
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
       color: var(--ink);
       background: var(--bg);
     }
-
     .honeypot {
       position: absolute;
       left: -10000px;
@@ -53,7 +46,6 @@
       height: 1px;
       overflow: hidden;
     }
-
     .skip-link {
       position: absolute;
       left: 1rem;
@@ -63,36 +55,29 @@
       padding: 0.5rem 0.75rem;
       z-index: 2000;
     }
-
     .skip-link:focus { top: 1rem; }
-
     .navbar-brand span { color: var(--brand); }
     .nav-link { font-weight: 500; }
-
     .btn-brand {
       background: var(--brand);
       color: #fff;
       border: none;
       font-weight: 600;
     }
-
     .btn-brand:hover,
     .btn-brand:focus {
       background: var(--brand-dark);
       color: #fff;
     }
-
     .btn-outline-brand {
       border: 1.5px solid var(--brand);
       color: var(--brand);
       font-weight: 600;
     }
-
     .btn-outline-brand:hover {
       background: var(--brand);
       color: #fff;
     }
-
     .eyebrow {
       color: var(--brand);
       font-weight: 700;
@@ -100,7 +85,6 @@
       text-transform: uppercase;
       font-size: 0.78rem;
     }
-
     .typewriter {
       color: var(--brand);
       min-height: 1.2em;
@@ -108,14 +92,12 @@
       border-right: 2px solid var(--brand);
       padding-right: 4px;
     }
-
     .portrait-wrap {
       display: inline-block;
       padding: 10px;
       border-radius: 50%;
       background: linear-gradient(135deg, #c9a6ff, var(--brand));
     }
-
     .portrait {
       width: min(320px, 70vw);
       height: min(320px, 70vw);
@@ -123,7 +105,6 @@
       border-radius: 50%;
       border: 6px solid #fff;
     }
-
     .social-row a {
       display: inline-flex;
       width: 40px;
@@ -136,34 +117,27 @@
       color: var(--ink);
       box-shadow: 0 6px 16px rgba(22, 19, 26, 0.06);
     }
-
     .social-row a:hover { color: var(--brand); }
-
     .stat-card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 1rem 0.5rem;
     }
-
     .stat-card strong {
       display: block;
       font-size: 1.15rem;
     }
-
     .stat-card span {
       color: var(--muted);
       font-size: 0.8rem;
     }
-
     .tracking { letter-spacing: 0.08em; }
-
     .skill-cloud {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-
     .skill-cloud span {
       background: #efe6ff;
       color: #5a2d99;
@@ -172,22 +146,18 @@
       font-size: 0.88rem;
       font-weight: 600;
     }
-
     .skill-cloud.muted span {
       background: #fff;
       border: 1px solid var(--line);
       color: var(--muted);
     }
-
     .services { background: #fff; }
-
     .service-card {
       background: var(--bg);
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: 1.5rem;
     }
-
     .service-card .icon {
       width: 48px;
       height: 48px;
@@ -199,7 +169,6 @@
       margin-bottom: 1rem;
       font-size: 1.2rem;
     }
-
     .project-card {
       position: relative;
       background: #fff;
@@ -208,12 +177,10 @@
       overflow: hidden;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
     .project-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 16px 32px rgba(80, 40, 140, 0.1);
     }
-
     .project-media {
       height: 140px;
       display: grid;
@@ -221,14 +188,12 @@
       color: #fff;
       font-size: 2rem;
     }
-
     .project-a { background: linear-gradient(135deg, #7155d9, #9f51f0); }
     .project-b { background: linear-gradient(135deg, #3d5afe, #7c4dff); }
     .project-c { background: linear-gradient(135deg, #5b2c6f, #9f51f0); }
     .project-d { background: linear-gradient(135deg, #512da8, #9575cd); }
     .project-e { background: linear-gradient(135deg, #3949ab, #7e57c2); }
     .project-f { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
-
     .tags { margin: 0.75rem 0; }
     .tags span {
       display: inline-block;
@@ -240,26 +205,21 @@
       font-size: 0.75rem;
       color: var(--muted);
     }
-
     .project-card a { color: var(--brand); font-weight: 600; text-decoration: none; }
-
     .cta-band {
       background: linear-gradient(120deg, #7b35c9, #9f51f0);
       padding: 4rem 0;
     }
-
     .contact-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
     .contact-list li {
       display: flex;
       gap: 0.9rem;
       margin-bottom: 1.1rem;
     }
-
     .contact-list i {
       width: 40px;
       height: 40px;
@@ -269,27 +229,22 @@
       background: #efe6ff;
       color: var(--brand);
     }
-
     .contact-list a,
     .contact-list span {
       display: block;
       color: var(--muted);
       text-decoration: none;
     }
-
     .contact-list a:hover { color: var(--brand); }
-
     .contact-form .form-control {
       border: 1px solid var(--line);
       box-shadow: none;
       padding: 0.7rem 0.85rem;
     }
-
     .contact-form .form-control:focus {
       border-color: var(--brand);
       box-shadow: 0 0 0 3px rgba(159, 81, 240, 0.15);
     }
-
     .to-top {
       position: fixed;
       right: 1.25rem;
@@ -305,9 +260,7 @@
       box-shadow: 0 10px 20px rgba(159, 81, 240, 0.35);
       z-index: 50;
     }
-
     .to-top.is-visible { display: grid; }
-
     .footer {
       background: #fff;
       border-top: 1px solid var(--line);
@@ -316,7 +269,6 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#home">raiyan<span>.</span>dev</a>
@@ -337,7 +289,6 @@
       </div>
     </div>
   </nav>
-
   <section class="home" id="home">
     <div class="container">
       <div class="row min-vh-100 align-items-center gy-5 py-5">
@@ -370,7 +321,6 @@
       </div>
     </div>
   </section>
-
   <section class="about py-5" id="about">
     <div class="container py-4">
       <div class="row justify-content-center mb-4">
@@ -410,7 +360,8 @@
               </div>
             </div>
           </div>
-          <a href="resume/CV to Oxfam.pdf" target="_blank" rel="noopener" class="btn btn-brand">Download CV</a>
+          <!-- Download CV keeps the full section width under the three cards -->
+          <a href="resume/CV to Oxfam.pdf" target="_blank" rel="noopener" class="btn btn-brand w-100">Download CV</a>
         </div>
         <div class="col-lg-6">
           <h3 class="h6 text-uppercase tracking mb-3">Core stack</h3>
@@ -439,7 +390,6 @@
       </div>
     </div>
   </section>
-
   <section class="services py-5" id="services">
     <div class="container py-4">
       <div class="text-center mb-5">
@@ -471,7 +421,6 @@
       </div>
     </div>
   </section>
-
   <section class="portfolio py-5" id="portfolio">
     <div class="container py-4">
       <div class="text-center mb-5">
@@ -552,14 +501,13 @@
       </div>
     </div>
   </section>
-
   <section class="cta-band">
     <div class="container text-center">
       <h2 class="h3 fw-bold text-white mb-2">Need a developer for a web or .NET project?</h2>
       <p class="text-white-50 mb-0">Send a short brief. I’ll reply with whether I’m a fit and a realistic next step.</p>
+      <a href="https://mdraiyanalam.github.io/mdraiyanalam95.CTAs/" target="_blank" rel="noopener" class="btn btn-light mt-3 px-4">Get in touch</a>
     </div>
   </section>
-
   <section class="contact py-5" id="contact">
     <div class="container py-4">
       <div class="text-center mb-5">
@@ -635,28 +583,23 @@
       </div>
     </div>
   </section>
-
   <button type="button" class="to-top" id="toTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-
   <footer class="footer py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
       <p class="mb-0 text-secondary small">© <span id="year"></span> Md Raiyan Alam. Built in Dhaka.</p>
-      <p class="mb-0 text-secondary small">Designed and developed by <a href="https://mdraiyanalam.github.io/raiyan.contact/" target="_blank" rel="noopener">Md Raiyan Alam</a></p>
+      <p class="mb-0 text-secondary small">Designed and developed by <a href="https://mdraiyanalam.github.io/mdraiyanalam95.CTAs/" target="_blank" rel="noopener">Md Raiyan Alam</a></p>
     </div>
   </footer>
-
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6Lf1EJItAAAAAKO1OeGIzZL-B0Kei2OKLRClkbkM"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-
   const roles = ["Web Developer", "ASP.NET Developer", "React Developer"];
   const typeEl = document.getElementById("typewriter");
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
   async function runTypewriter() {
     let index = 0;
     while (true) {
@@ -675,9 +618,7 @@
       index += 1;
     }
   }
-
   runTypewriter();
-
   const toTop = document.getElementById("toTop");
   window.addEventListener("scroll", () => {
     toTop.classList.toggle("is-visible", window.scrollY > 400);
@@ -685,7 +626,6 @@
   toTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
   const recaptchaSiteKey = "6Lf1EJItAAAAAKO1OeGIzZL-B0Kei2OKLRClkbkM";
   const contactForm = document.querySelector(".contact-form");
   contactForm.addEventListener("submit", async (event) => {
