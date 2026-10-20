@@ -33,4 +33,7 @@
   </a>
 </p>
 
+<!-- DAILY_REPORT_START -->
+<!-- DAILY_REPORT_END -->
+
 ![snake gif](https://github.com/mdraiyanalam/mdraiyanalam/blob/output/github-snake.svg)
