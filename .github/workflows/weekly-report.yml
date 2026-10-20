@@ -5,31 +5,82 @@ on:
     - cron: "0 12 * * *"  # Runs every day at 12:00 PM UTC (Daily Update)
   workflow_dispatch:  # Allows manual trigger
 
+# Needed so the job can push the updated README back to the repo
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Generate Daily Report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          USERNAME: ${{ github.repository_owner }}
         run: |
-          echo "## 📊 Daily GitHub Activity Report" > daily_report.md
-          echo "" >> daily_report.md
-          echo "![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=mdraiyanalam&theme=dark)" >> daily_report.md
-          echo "" >> daily_report.md
-          echo "📆 **Last 7 Days Contributions:**" >> daily_report.md
-          echo "" >> daily_report.md
-          curl -s https://github-contributions.vercel.app/api/mdraiyanalam | jq -r '.total' >> daily_report.md
+          FROM=$(date -u -d '6 days ago' +%Y-%m-%dT00:00:00Z)
+          TO=$(date -u +%Y-%m-%dT23:59:59Z)
+
+          # Ask GitHub directly for the contribution count of the last 7 days
+          TOTAL=$(gh api graphql \
+            -f query='query($login: String!, $from: DateTime!, $to: DateTime!) {
+              user(login: $login) {
+                contributionsCollection(from: $from, to: $to) {
+                  contributionCalendar { totalContributions }
+                }
+              }
+            }' \
+            -f login="$USERNAME" -f from="$FROM" -f to="$TO" \
+            --jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')
+
+          if ! [[ "$TOTAL" =~ ^[0-9]+$ ]]; then
+            echo "::error::Could not read contribution count (got: '$TOTAL')"
+            exit 1
+          fi
+
+          {
+            echo "## 📊 Daily GitHub Activity Report"
+            echo ""
+            echo "![GitHub Streak](https://streak-stats.demolab.com/?user=${USERNAME}&theme=dark)"
+            echo ""
+            echo "📆 **Last 7 Days Contributions:** ${TOTAL}"
+          } > daily_report.md
+
+          cat daily_report.md
 
       - name: Update README.md
         run: |
-          sed -i '/<!-- DAILY_REPORT_START -->/,/<!-- DAILY_REPORT_END -->/c\<!-- DAILY_REPORT_START -->\n'$(cat daily_report.md)'\n<!-- DAILY_REPORT_END -->' README.md
+          if ! grep -q '<!-- DAILY_REPORT_START -->' README.md || ! grep -q '<!-- DAILY_REPORT_END -->' README.md; then
+            echo "::error::README.md is missing the DAILY_REPORT_START / DAILY_REPORT_END markers"
+            exit 1
+          fi
+
+          # Replace everything between the markers with the new report
+          awk -v report="daily_report.md" '
+            /<!-- DAILY_REPORT_START -->/ {
+              print
+              while ((getline line < report) > 0) print line
+              skip = 1
+              next
+            }
+            /<!-- DAILY_REPORT_END -->/ { skip = 0 }
+            !skip { print }
+          ' README.md > README.tmp
+          mv README.tmp README.md
+          rm daily_report.md
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
           git commit -m "📊 Updated Daily GitHub Activity Report"
           git push
