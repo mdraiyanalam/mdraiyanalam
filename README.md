@@ -33,12 +33,4 @@
   </a>
 </p>
 
-<!-- DAILY_REPORT_START -->
-## 📊 Daily GitHub Activity Report
-
-![GitHub Streak](https://streak-stats.demolab.com/?user=mdraiyanalam&theme=dark)
-
-📆 **Last 7 Days Contributions:** 5
-<!-- DAILY_REPORT_END -->
-
 ![snake gif](https://github.com/mdraiyanalam/mdraiyanalam/blob/output/github-snake.svg)
